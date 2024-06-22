@@ -1,15 +1,11 @@
 import { userAccount } from "./userAccount"
 
-export class EmployeeAccount extends userAccount{
-  constructor(name:string, accountNumber: number){
+export class EmployeeAccount extends userAccount {
+  constructor(name: string, accountNumber: number) {
     super(name, accountNumber)
   }
-  deposit = (value:number): void => {
-    if(this.isValid()){
+  deposit = (value: number): void => {
       console.log('Deposit suceffuly')
-      this.setBalance(value + 10)
-    }else {
-      console.log("Opps, there's something wrong")
-    }
+      this.balance += value
   }
 }

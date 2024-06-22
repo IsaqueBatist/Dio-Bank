@@ -1,4 +1,4 @@
-import { userAccount } from "./userAccount";
+import { userAccount } from "./userAccount"
 
 export class CompanyAccount extends userAccount {
 
@@ -6,11 +6,7 @@ export class CompanyAccount extends userAccount {
     super(name, accountNumber)
   }
   getloan = (value: number) => {
-    if (this.isValid()) {
-      console.log('successful loan')
-      this.setBalance(value)
-    }else{
-      console.log("Opps, there's something wrong")
-    }
+    console.log('successful loan')
+    this.balance += value
   }
 }
