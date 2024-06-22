@@ -1,6 +1,6 @@
 export abstract class userAccount {
-  name: string
-  accountNumber: number
+  readonly name: string
+  private readonly accountNumber: number
   private valid: boolean = true
   private balance: number = 0
 
@@ -8,11 +8,11 @@ export abstract class userAccount {
     this.name = name
     this.accountNumber = accountNumber
   }
-  setName = (newName:string): void => {
-    this.name = newName
-  }
   getName = (): void => {
     console.log(this.name)
+  }
+  getAccountNumber= ():void => {
+    console.log(this.accountNumber)
   }
   setBalance = (value:number):void => {
     this.balance += value
@@ -27,7 +27,6 @@ export abstract class userAccount {
       throw Error()
     }
   }
-
   deposit = (value:number):void => {
     if(this.isValid()){
       console.log('Deposit suceffuly')
